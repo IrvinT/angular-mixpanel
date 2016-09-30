@@ -29,8 +29,10 @@ angular.module('analytics.mixpanel', [])
             if (!Object.prototype.hasOwnProperty.call(window, 'mixpanel')) {
                 throw 'Global `mixpanel` not available. Did you forget to include the library on the page?';
             }
-            
-            mixpanel.init(apiKey);            
+
+            if (apiKey !== undefined) {
+                mixpanel.init(apiKey);
+            }
 
             waitTillAsyncApiLoaded(function () {
                 if (superProperties) mixpanel.register(superProperties);
