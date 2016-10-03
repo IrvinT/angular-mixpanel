@@ -74,8 +74,6 @@ angular.module('analytics.mixpanel', [])
 
                 if (typeof fn !== 'undefined') {
                     return fn.apply(scope, arguments);
-                } else {
-                    return false;
                 }
             }
         }
